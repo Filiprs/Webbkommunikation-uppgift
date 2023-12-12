@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', function () {
     async function latestpost() {
         try {
             const response = await fetch('https://blog-api-assignment.up.railway.app/posts');
-            const blogPosts = await response.json();
+            const blogInlägg = await response.json();
 
-            console.log('API Response:', blogPosts); 
+            console.log('API Response:', blogInlägg); 
             
             blogPostsContainer.innerHTML = '';
 
             //  Loop thru Api-answer and create html-element for each post
         
-            blogPosts.forEach(post => {
+            blogInlägg.forEach(post => {
                 const postElement = document.createElement('div');
                 postElement.classList.add('blog-post');
 
@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const Läsmerknapp = e.target.closest('.read-more');
 
         if (Läsmerknapp) {
-            const postId = Läsmerknapp.getAttribute('data-post-id');
-            console.log('Post ID when clicking "Läs mer":', postId); 
+            const inläggID = Läsmerknapp.getAttribute('data-post-id');
+            console.log('Post ID when clicking "Läs mer":', inläggID); 
 
             //  Navigate to post.js with the chosen id element
-            window.location.href = `post.html?id=${postId}`;
+            window.location.href = `post.html?id=${inläggID}`;
         }
     });
 
