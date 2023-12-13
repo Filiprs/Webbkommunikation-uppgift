@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const blogPostsContainer = document.getElementById('blog-posts');
 
     // Function to get the latest post
-    async function latestpost() {
+    async function latestPost() {
         try {
             const response = await fetch('https://blog-api-assignment.up.railway.app/posts');
             const blogInlägg = await response.json();
@@ -45,16 +45,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const Läsmerknapp = e.target.closest('.read-more');
 
         if (Läsmerknapp) {
-            const inläggID = Läsmerknapp.getAttribute('data-post-id');
-            console.log('Post ID when clicking "Läs mer":', inläggID); 
+            const inläggId = Läsmerknapp.getAttribute('data-post-id');
+            console.log('Post ID when clicking "Läs mer":', inläggId); 
 
             //  Navigate to post.js with the chosen id element
-            window.location.href = `post.html?id=${inläggID}`;
+            window.location.href = `post.html?id=${inläggId}`;
         }
     });
 
     // Get the latest blog posts
-    latestpost();
+    latestPost();
 });
 
 
