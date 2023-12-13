@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Getting the id eleement from URL
     const urlParams = new URLSearchParams(location.search);
-    const inläggID = urlParams.get('id');
+    const inläggId = urlParams.get('id');
 
 
-    if (inläggID) {
-        fetchPost(inläggID);
+    if (inläggId) {
+        fetchPost(inläggId);
     } else {
         console.error('Inläggsid saknas i URL:en');
     }
 
     // Function to get the specifikt post
-    async function fetchPost(inläggID) {
+    async function fetchPost(inläggId) {
         try {
             
-            const response = await fetch(`https://blog-api-assignment.up.railway.app/posts/${inläggID}`);
+            const response = await fetch(`https://blog-api-assignment.up.railway.app/posts/${inläggId}`);
             const post = await response.json();
 
             const tagsHtml = post.tags ? `<p><strong>Tags:</strong> ${post.tags.join(', ')}</p>` : '';
