@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
  // Creating HTML elements for the post
             const postContentContainer = document.getElementById('post-content');
             const postHTML = `
-                <h2>${post.title}</h2>
-                <p>${post.author} ${post.date}</p>
+                <h1>${post.title}</h1>
+                <p class="post-author">${post.author} ${post.date}</p>
                 ${tagsHtml}
-                <p>${post.content}</p>
+                <p class="content">${post.content}</p>
               
                 <a href="#" class="Index-button">Back</a>
 
