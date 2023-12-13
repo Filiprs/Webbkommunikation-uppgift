@@ -19,3 +19,15 @@ header{
 .post-content{
 font-style: italic;
 }
+
+#post-content{
+    display:grid;
+    justify-content: center;
+}
+.post-author{
+    font-style: italic;
+}
+
+.content{
+    font-style: italic;
+}
