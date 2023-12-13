@@ -25,11 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 const tags = post.tags ? post.tags.join(', ') : 'Inga taggar';
 
                 postElement.innerHTML = `
-                    <h2>${title}</h2>
-                    <p> ${author} ${date} </p>
-                    <p><strong>Tags:</strong> ${tags}</p>
-                    <p class="post-content">${content.substring(0, 100)}...<a href="#" data-post-id="${post._id}" class="read-more">Read more...</a>
-                    </p>
+                <h2>${title}</h2>
+                <p class="author"> ${author} ${date} </p>
+                <p class="tags"><strong>Tags:</strong> ${tags}</p>
+                <p class="post-content">${content.substring(0, 100)}...<a href="#" data-post-id="${post._id}" class="read-more">Read more...</a></p>
                 `;
 
                 blogPostsContainer.appendChild(postElement);
